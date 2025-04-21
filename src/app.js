@@ -11,7 +11,7 @@ dotenv.config();
 app.use(express.json({limit:'10mb'}))
 app.use(cookieParser())
 app.use(cors({
-    origin: 'http://localhost:5173',  
+    origin:process.env.CORS_ORIGIN_PORT,  
     credentials: true                 
   }));
 
@@ -22,7 +22,7 @@ app.use("/api/messages", messageRoutes)
 
 const PORT = process.env.PORT;
 server.listen(PORT, () => {
-    console.log(`Your Server Is Running On http://localhost:${PORT}`)
+    // console.log(`Your Server Is Running On http://localhost:${PORT}`)
     connectDB()
 })
 

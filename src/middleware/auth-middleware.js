@@ -22,7 +22,7 @@ export const protectedRoute = async (req, res, next) => {
         next()
 
     } catch (error) {
-        console.log("Error in auth middleware", error.message)
+        // console.log("Error in auth middleware", error.message)
         return res.status(500).json({ message: "Internal srever error" })
     }
 }
