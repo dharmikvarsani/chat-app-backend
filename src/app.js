@@ -20,10 +20,10 @@ app.use("/api/messages", messageRoutes)
 
 
 
-const PORT = process.env.PORT;
+const PORT = process.env.PORT || 5001;
 server.listen(PORT, () => {
+  connectDB()
     // console.log(`Your Server Is Running On http://localhost:${PORT}`)
-    connectDB()
 })
 
 
